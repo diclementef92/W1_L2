@@ -5,8 +5,6 @@ public class Chiamata {
 	private String prefisso;
 	private int duratainMinuti;
 
-
-
 	public Chiamata(String prefisso, Long num, int durata) {
 		this.prefisso = prefisso;
 		this.duratainMinuti = durata;
