@@ -4,10 +4,10 @@ public class CartaSim {
 	private Long imei;
 	private String prefissoNazione;// per esempio +39
 	private Long numeroTelefono;
-	private int credito;
+	private Integer credito;
 	private Chiamata[] chiamateRecenti;
-	private int index;
-	private final int NUMERO_CHIAMATE_RECENTI = 5;
+	private Integer index;
+	private final Integer NUMERO_CHIAMATE_RECENTI =4;
 
 	public CartaSim(String prefisso, Long numero) {
 		this.numeroTelefono = numero;
@@ -34,7 +34,7 @@ public class CartaSim {
 		this.credito -= addebito;
 	}
 
-	public void setNumeroTelefono(Long num) {
+	public void setNumeroTelefono(long num) {
 		this.numeroTelefono = num;
 	}
 
@@ -57,10 +57,10 @@ public class CartaSim {
 
 	public String toString() {
 		String testo = "Numero Telefono: " + prefissoNazione + " " + numeroTelefono + "\n" + "Imei:" + imei
-				+ "\nCredito: " + credito + "\nUltime chiamate:\n";
+				+ "\nCredito: " + credito + "\nUltime chiamate dalla meno recente:\n";
 
 		for (int i = 0; i < index; i++) {
-			testo += i + ": " + this.chiamateRecenti[i].toString();
+			testo += (i+1) + ": " + this.chiamateRecenti[i].toString();
 		}
 		return testo;
 	}
