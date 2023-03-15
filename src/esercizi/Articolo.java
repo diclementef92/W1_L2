@@ -3,11 +3,11 @@ package esercizi;
 public class Articolo {
 	private Long codice;
 	private String descrizione;
-	private Double prezzo;
+	private Float prezzo;
 	private Integer numPezziDisponibili;
-	private static Double iva;
+	private static Float iva;
 
-	public Articolo(String descr, Double prezzo, Integer numPezzi) {
+	public Articolo(String descr, Float prezzo, Integer numPezzi) {
 		this.codice = (long) (Math.random() * 10000000L);
 		this.setDescrizione(descr);
 		this.setPrezzo(prezzo);
@@ -22,7 +22,7 @@ public class Articolo {
 		return descrizione;
 	}
 
-	public Double getPrezzo() {
+	public Float getPrezzo() {
 		return prezzo;
 	}
 
@@ -34,7 +34,7 @@ public class Articolo {
 		this.descrizione = descrizione;
 	}
 
-	public void setPrezzo(Double prezzo) {
+	public void setPrezzo(Float prezzo) {
 		this.prezzo = prezzo;
 	}
 
@@ -47,12 +47,12 @@ public class Articolo {
 				+ "\nUnita' disponibili: " + numPezziDisponibili + "\n";
 	}
 
-	public static Double getIva() {
+	public static Float getIva() {
 		return iva;
 	}
 
-	public static void setIva(Double iva) {
-		Articolo.iva = iva;
+	public static void setIva(Float f) {
+		Articolo.iva = f;
 	}
 
 }

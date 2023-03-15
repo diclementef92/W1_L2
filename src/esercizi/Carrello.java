@@ -5,18 +5,18 @@ import java.util.Arrays;
 public class Carrello {
 	private Cliente cliente;
 	private Articolo[] articoli = new Articolo[0];
-	private Double prezzoTotale;
+	private Float prezzoTotale;
 
 	public Carrello(Cliente cliente) {
 		this.cliente = cliente;
-		this.prezzoTotale = 0D;
+		this.prezzoTotale = 0f;
 	}
 
 	public Cliente getCliente() {
 		return cliente;
 	}
 
-	public Double getPrezzoTotale() {
+	public Float getPrezzoTotale() {
 		return prezzoTotale;
 	}
 

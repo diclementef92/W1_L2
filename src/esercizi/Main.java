@@ -45,23 +45,20 @@ public class Main {
 //		
 //		System.out.println("La miaSim:\n" + miaSim.toString());
 //		
-		Articolo penna = new Articolo("penna", 1.8, 100);
+		Articolo penna = new Articolo("penna", 1.8f, 100);
 		Cliente andrea = new Cliente("Andrea", "De Cecco", "andrea.dececco@mail.it");
 		Carrello carrello = new Carrello(andrea);
+		carrello.aggiungiArticolo(penna);
 		carrello.aggiungiArticolo(penna);
 
 //		System.out.println("Nuovo cliente:\n" + andrea.toString());
 		System.out.println(carrello.toString());
-		
-		
-		
+
 		System.out.println("imposta iva: ");
-		Articolo.setIva(scanner.nextDouble());
-		System.out.println(Articolo.getIva());
-		
-		
-		
-		
+		Articolo.setIva(scanner.nextFloat());
+		System.out.println("con l'iva al " + Articolo.getIva() + "% il totale e' "
+				+ (carrello.getPrezzoTotale() * (1 + Articolo.getIva() / 100)) + "Euro");
+
 	}
 
 }
