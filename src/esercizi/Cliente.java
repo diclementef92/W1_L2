@@ -1,20 +1,20 @@
 package esercizi;
 
-import java.util.Date;
+import java.time.LocalDate;
 
 public class Cliente {
 	private Long codice;
 	private String nome;
 	private String cognome;
 	private String email;
-	private Date dataIscrizione;
+	private LocalDate dataIscrizione;
 
 	public Cliente(String nome, String cognome, String email) {
 		this.codice = (long) (Math.random() * 10000000L);
 		this.setEmail(email);
 		this.setNome(nome);
 		this.setCognome(cognome);
-		this.setDataIscrizione(new Date());
+		this.setDataIscrizione(LocalDate.now());
 	}
 
 	public Long getCodice() {
@@ -33,7 +33,7 @@ public class Cliente {
 		return email;
 	}
 
-	public Date getDataIscrizione() {
+	public LocalDate getDataIscrizione() {
 		return dataIscrizione;
 	}
 
@@ -49,13 +49,13 @@ public class Cliente {
 		this.email = email;
 	}
 
-	public void setDataIscrizione(Date dataIscrizione) {
+	public void setDataIscrizione(LocalDate dataIscrizione) {
 		this.dataIscrizione = dataIscrizione;
 	}
 
 	public String toString() {
 		return "Codice Cliente: " + codice + "\nNome: " + nome + "\nCognome: " + cognome + "\nEmail: " + email
-				+ "\nIscritto dal " + dataIscrizione;
+				+ "\nIscritto dal " + dataIscrizione.toString();
 	}
 
 }

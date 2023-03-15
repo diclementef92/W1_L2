@@ -1,8 +1,11 @@
 package esercizi;
 
 import java.util.Date;
+import java.util.Scanner;
 
 public class Main {
+
+	private static Scanner scanner = new Scanner(System.in);
 
 	public static void main(String[] args) {
 //		Rettangolo r1 = new Rettangolo(10.5, 5.8);
@@ -45,13 +48,20 @@ public class Main {
 		Articolo penna = new Articolo("penna", 1.8, 100);
 		Cliente andrea = new Cliente("Andrea", "De Cecco", "andrea.dececco@mail.it");
 		Carrello carrello = new Carrello(andrea);
-		Date febbraio = new Date();
-		febbraio.setMonth(1);
-		andrea.setDataIscrizione(febbraio);
-		System.out.println("Nuovo cliente:\n" + andrea.toString());
+		carrello.aggiungiArticolo(penna);
 
+//		System.out.println("Nuovo cliente:\n" + andrea.toString());
+		System.out.println(carrello.toString());
+		
+		
+		
 		System.out.println("imposta iva: ");
-		Articolo.setIva(27D);
+		Articolo.setIva(scanner.nextDouble());
+		System.out.println(Articolo.getIva());
+		
+		
+		
+		
 	}
 
 }

@@ -44,7 +44,7 @@ public class Articolo {
 
 	public String toString() {
 		return "Codice Articolo: " + codice + "\nDescrizione: " + descrizione + "\nPrezzo: " + prezzo
-				+ "\nUnità disponibili: " + numPezziDisponibili;
+				+ "\nUnita' disponibili: " + numPezziDisponibili + "\n";
 	}
 
 	public static Double getIva() {

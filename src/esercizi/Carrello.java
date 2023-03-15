@@ -4,7 +4,7 @@ import java.util.Arrays;
 
 public class Carrello {
 	private Cliente cliente;
-	private Articolo[] articoli;
+	private Articolo[] articoli = new Articolo[0];
 	private Double prezzoTotale;
 
 	public Carrello(Cliente cliente) {
@@ -36,12 +36,31 @@ public class Carrello {
 
 	public void aggiungiArticolo(Articolo articolo) {
 		int newLength = this.articoli.length + 1;
-		Articolo[] articoliAggiornati = Arrays.copyOf(this.articoli, newLength);
-		this.articoli = articoliAggiornati;
+		this.articoli = new Articolo[newLength];
+
+		this.articoli = Arrays.copyOf(this.articoli, newLength);
+
+		this.articoli[newLength - 1] = articolo;
+
+		this.prezzoTotale += articolo.getPrezzo();
+		articolo.setNumPezziDisponibili(articolo.getNumPezziDisponibili() - 1);
+
 //		Articolo[] nuoviArticoli = new Articolo[this.articoli.length + 1];
 //		System.arraycopy(this.articoli, 0, nuoviArticoli, 0, this.articoli.length);
 		// Aggiungo articolo in ultima posizione
 //		nuoviArticoli[this.articoli.length] = articolo; 
 	}
 
+	public String toString() {
+		String text = "Carrello di:\n" + cliente.toString() + "\n\nArticoli:\n";
+//		System.out.println( this.articoli.length);
+		for (int i = 0; i < this.articoli.length; i++) {
+
+			text += (i + 1) + ":\n" + this.articoli[i].toString();
+		}
+
+		text += "Totale = " + this.getPrezzoTotale() + "Euro";
+
+		return text;
+	}
 }
